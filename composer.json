@@ -1,7 +1,8 @@
 {
     "name": "i-tools/blank-generator",
-    "description": "Generate PDF blank form",
+    "description": "Generate PDF blank form with data",
     "type": "library",
+    "license": "proprietary",
     "authors": [
         {
             "name": "Alex Krasnov",
