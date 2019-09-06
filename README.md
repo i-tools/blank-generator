@@ -1,1 +1,1 @@
-# beuse-test
+# blank-generator
