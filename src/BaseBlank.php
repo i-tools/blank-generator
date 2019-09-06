@@ -58,7 +58,6 @@ class BaseBlank implements Interfaces\IBlank
     }
 
     /**
-     * @param string $outputFile
      * @return bool
      */
     public function save(): bool

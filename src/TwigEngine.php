@@ -22,7 +22,7 @@ class TwigEngine implements ITemplateEngine
     /**
      * TwigEngine constructor.
      * @param string $templateDirectory
-     * @param string $templateNames
+     * @param string $templateName
      */
     public function __construct(string $templateDirectory, string $templateName)
     {

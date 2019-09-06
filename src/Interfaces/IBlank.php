@@ -20,7 +20,6 @@ interface IBlank
 
     /**
      * Генерация PDF файла.
-     * @param string $outputFile
      * @return bool
      */
     public function save(): bool;
