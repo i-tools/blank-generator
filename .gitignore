@@ -1,0 +1,6 @@
+/.idea/
+/vendor/
+/utils/
+/demo/*.pdf
+composer.lock
+.php_cs.cache

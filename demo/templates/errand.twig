@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * { padding: 0; margin: 0; }
+        BODY {
+            margin: 5px;
+        }
+        body { font-family: DejaVu Sans, sans-serif; font-size: 9px; }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 6px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<table width="100%">
+    <thead>
+        <tr >
+            <th colspan="2">Geesys DTS</th>
+            <th colspan="4"align="center">Поручение № {{ data.number }} к Заявке №  {{ data.request }}</th>
+            <th colspan="2" align="center" width="10%" nowrap>От {{ data.date }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="8" align="center" style="border: none;"><strong>Реквизиты сторон</strong></td>
+        </tr>
+        <tr>
+            <td width="auto"  style="text-align: left;" valign="top"><strong>Заказчик:</strong></td>
+            <td colspan="7"  style="text-align: left;">{{ data.requisites.customer.name }}, ИНН {{ data.requisites.customer.inn }}, КПП {{ data.requisites.customer.kpp }}, {{ data.requisites.customer.postcode }}, {{ data.requisites.customer.addr }}</td>
+        </tr>
+        <tr>
+            <td width="2%"  style="text-align: left;" valign="top"><strong>Агент:</strong></td>
+            <td colspan="7"  style="text-align: left;">{{ data.requisites.agent.name }}, ИНН {{ data.requisites.agent.inn }}, КПП {{ data.requisites.agent.kpp }}, {{ data.requisites.agent.postcode }}, {{ data.requisites.agent.addr }}</td>
+        </tr>
+        <tr>
+            <td width="2%"  style="text-align: left;" valign="top"><strong>Исполнитель:</strong></td>
+            <td colspan="7" style="text-align: left;">{{ data.requisites.executer.name }}, ИНН {{ data.requisites.executer.inn }}, КПП {{ data.requisites.executer.kpp }}, {{ data.requisites.executer.postcode }}, {{ data.requisites.executer.addr }}</td>
+        </tr>
+
+        <tr>
+            <td colspan="8" align="center"><strong>Погрузка</strong></td>
+        </tr>
+        <tr>
+            <td width="auto"  style="text-align: left;" valign="top"><strong>Заказчик:</strong></td>
+            <td colspan="7"  style="text-align: left;">{{ data.loading.shipper.name }}, ИНН {{ data.loading.shipper.inn }}, КПП {{ data.loading.shipper.kpp }}, {{ data.loading.shipper.postcode }}, {{ data.loading.shipper.addr }}</td>
+        </tr>
+        <tr>
+            <td width="2%"  style="text-align: left;" valign="top"><strong>Агент:</strong></td>
+            <td colspan="7"  style="text-align: left;">{{ data.loading.place.name }}, ИНН {{ data.loading.place.inn }}, КПП {{ data.loading.place.kpp }}, {{ data.loading.place.postcode }}, {{ data.loading.place.addr }}</td>
+        </tr>
+
+        <tr>
+            <td colspan="2"  style="text-align: left;" valign="top"><strong>Дата погрузки:</strong></td>
+            <td colspan="2"  style="text-align: left;"></td>
+            <td colspan="2"   style="text-align: left;" valign="top"><strong>Время погрузки:</strong></td>
+            <td colspan="2"  style="text-align: left;"></td>
+        </tr>
+
+        <tr  style="border: none;">
+            <td colspan="8" align="center"><strong>Разгрузка</strong></td>
+        </tr>
+        {% for unload in data.unloading %}
+            <tr>
+                <td colspan="8" style="text-align: left; border: none;"><strong>Грузополучатель № {{ loop.index }} </strong></td>
+            </tr>
+            <tr>
+                <td width="auto"  style="text-align: left;" valign="top"><strong>Грузополучатель:</strong></td>
+                <td colspan="7"  style="text-align: left;">{{ unload.consignee.name|e }}, ИНН {{ unload.consignee.inn }}, КПП {{ unload.consignee.kpp }}, {{ unload.consignee.postcode }}, {{ unload.consignee.addr }}</td>
+            </tr>
+            <tr>
+                <td width="auto"  style="text-align: left;" valign="top"><strong>Место разгрузки:</strong></td>
+                <td colspan="7"  style="text-align: left;">{{ unload.place.name }}, ИНН {{ unload.place.inn }}, КПП {{ unload.place.kpp }}, {{ unload.place.postcode }}, {{ unload.place.addr }}</td>
+            </tr>
+            <tr>
+                <td colspan="2"  style="text-align: left;" valign="top"><strong>Дата разгрузки:</strong></td>
+                <td colspan="2"  style="text-align: left;"></td>
+                <td colspan="2"   style="text-align: left;" valign="top"><strong>Время разгрузки:</strong></td>
+                <td colspan="2"  style="text-align: left;"></td>
+            </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+</body>
+</html>

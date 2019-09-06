@@ -1,0 +1,30 @@
+{
+    "name": "i-tools/blank-generator",
+    "description": "Generate PDF blank form",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Alex Krasnov",
+            "email": "alex@i-tools.ru"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "twig/twig": "^2.11",
+        "ext-json": "*",
+        "dompdf/dompdf": "^0.8.3"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.15"
+    },
+    "autoload": {
+        "psr-4": {
+            "Blanks\\": "src/"
+        }
+    },
+    "scripts": {
+        "cs-fix": [
+            "vendor/bin/php-cs-fixer fix src --rules=@PSR2"
+        ]
+    }
+}
