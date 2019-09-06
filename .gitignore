@@ -4,3 +4,4 @@
 /demo/*.pdf
 composer.lock
 .php_cs.cache
+.DS_Store
