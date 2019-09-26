@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Blanks\Interfaces;
 
 /**
- * Interface ITemplateEngine
+ * Interface TemplateEngineInterface
  * @package Blanks\Interfaces
  */
-interface ITemplateEngine
+interface TemplateEngineInterface
 {
     /**
      * Установка переменных для шаблонизатораю

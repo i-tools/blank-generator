@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace Blanks;
 
-use Blanks\Interfaces\ITemplateEngine;
-use Blanks\Interfaces\IBlankSource;
-use Blanks\Interfaces\IPDFGenerator;
+use Blanks\Interfaces\TemplateEngineInterface;
+use Blanks\Interfaces\BlankSourceInterface;
+use Blanks\Interfaces\PDFGeneratorInterface;
 
 /**
  * Class BaseBlank - Базовый класс для создания PDF файла с печатной формой.
  * @package Blanks
  */
-class BaseBlank implements Interfaces\IBlank
+class BaseBlank implements Interfaces\BlankInterface
 {
     private $source = null;
     private $render = null;
@@ -20,11 +20,11 @@ class BaseBlank implements Interfaces\IBlank
 
     /**
      * BaseBlank constructor.
-     * @param IBlankSource $dataSource
-     * @param ITemplateEngine $htmlRender
-     * @param IPDFGenerator $pdfGenerator
+     * @param BlankSourceInterface $dataSource
+     * @param TemplateEngineInterface $htmlRender
+     * @param PDFGeneratorInterface $pdfGenerator
      */
-    public function __construct(IBlankSource $dataSource, ITemplateEngine $htmlRender, IPDFGenerator $pdfGenerator)
+    public function __construct(BlankSourceInterface $dataSource, TemplateEngineInterface $htmlRender, PDFGeneratorInterface $pdfGenerator)
     {
         $this->source = $dataSource;
         $this->render = $htmlRender;

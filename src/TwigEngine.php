@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Blanks;
 
-use Blanks\Interfaces\ITemplateEngine;
+use Blanks\Interfaces\TemplateEngineInterface;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
@@ -12,7 +12,7 @@ use Twig\Loader\FilesystemLoader;
  * Class TwigEngine Шаблонизатор на базе Twig.
  * @package Blanks
  */
-class TwigEngine implements ITemplateEngine
+class TwigEngine implements TemplateEngineInterface
 {
     private $twig = null;
     private $data = [];

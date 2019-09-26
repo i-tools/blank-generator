@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Blanks\Traits;
 
-trait TPDFGenerator
+trait PDFGeneratorTrait
 {
     private $outputFile = '';
     private $document = null;

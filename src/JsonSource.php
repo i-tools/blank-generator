@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Blanks;
 
-use Blanks\Interfaces\IBlankSource;
+use Blanks\Interfaces\BlankSourceInterface;
 
-class JsonBlankSource implements IBlankSource
+class JsonSource implements BlankSourceInterface
 {
     private $file = '';
     private $data = [];

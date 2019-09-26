@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace Blanks;
 
-use Blanks\Interfaces\IPDFGenerator;
-use Blanks\Traits\TPDFGenerator;
+use Blanks\Interfaces\PDFGeneratorInterface;
+use Blanks\Traits\PDFGeneratorTrait;
 use Dompdf\Dompdf;
 
 /**
  * Class DomPDFGenerator - Генератор PDF фалов на базе библиотеки dompdf
  * @package Blanks
  */
-class DomPDFGenerator implements IPDFGenerator
+class DomPDFGenerator implements PDFGeneratorInterface
 {
-    use TPDFGenerator;
+    use PDFGeneratorTrait;
 
     public function __construct(string $outputFile, array $options = null)
     {

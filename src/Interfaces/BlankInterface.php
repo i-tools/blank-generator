@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Blanks\Interfaces;
 
 /**
- * Interface IBlank
+ * Interface BlankInterface
  * @package Blanks\Interfaces
  */
-interface IBlank
+interface BlankInterface
 {
     /**
      * Установка ассоциативного масива с данными бланка.

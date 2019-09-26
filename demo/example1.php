@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
-use Blanks\Interfaces\IBlankSource;
-use Blanks\Interfaces\ITemplateEngine;
-use Blanks\Interfaces\IPDFGenerator;
-use Blanks\JsonBlankSource;
+use Blanks\Interfaces\BlankSourceInterface;
+use Blanks\Interfaces\TemplateEngineInterface;
+use Blanks\Interfaces\PDFGeneratorInterface;
+use Blanks\JsonSource;
 use Blanks\TwigEngine;
 use Blanks\DomPDFGenerator;
 
 class DemoBlank extends Blanks\BaseBlank
 {
-    public function __construct(IBlankSource $dataSource, ITemplateEngine $htmlRender, IPDFGenerator $pdfGenerator)
+    public function __construct(BlankSourceInterface $dataSource, TemplateEngineInterface $htmlRender, PDFGeneratorInterface $pdfGenerator)
     {
         parent::__construct($dataSource, $htmlRender, $pdfGenerator);
     }
@@ -22,7 +22,7 @@ class DemoBlank extends Blanks\BaseBlank
 }
 
 $blank = new DemoBlank(
-    new JsonBlankSource('./example1.json'),
+    new JsonSource('./example1.json'),
     new TwigEngine(
         './templates/',
         'errand.twig'

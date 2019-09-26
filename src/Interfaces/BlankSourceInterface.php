@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Blanks\Interfaces;
 
 /**
- * Interface IBlankSource
+ * Interface BlankSourceInterface
  * @package Blanks\Interfaces
  */
-interface IBlankSource
+interface BlankSourceInterface
 {
     /**
      * Загрузка данных из источника.
